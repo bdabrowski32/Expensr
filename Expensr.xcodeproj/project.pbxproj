@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		FF1FBADA23B0119300573C84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAD923B0119300573C84 /* AppDelegate.swift */; };
 		FF1FBADC23B0119300573C84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBADB23B0119300573C84 /* SceneDelegate.swift */; };
-		FF1FBADE23B0119300573C84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBADD23B0119300573C84 /* ViewController.swift */; };
+		FF1FBADE23B0119300573C84 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBADD23B0119300573C84 /* AddExpenseViewController.swift */; };
 		FF1FBAE123B0119300573C84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1FBADF23B0119300573C84 /* Main.storyboard */; };
 		FF1FBAE323B0119800573C84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1FBAE223B0119800573C84 /* Assets.xcassets */; };
 		FF1FBAE623B0119800573C84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1FBAE423B0119800573C84 /* LaunchScreen.storyboard */; };
+		FF1FBAEE23B04E2900573C84 /* ExpenseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAED23B04E2900573C84 /* ExpenseHistoryViewController.swift */; };
+		FF1FBAF323B0736600573C84 /* ExpenseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1FBAF223B0736600573C84 /* ExpenseHistoryCell.swift */; };
+		FFC2A45C23B7F4D600230093 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45B23B7F4D600230093 /* Expense.swift */; };
+		FFC2A45E23B7F65800230093 /* Expenses+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45D23B7F65800230093 /* Expenses+Extension.swift */; };
+		FFC2A46023B8192000230093 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2A45F23B8192000230093 /* Expenses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF1FBAD623B0119300573C84 /* Expensr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1FBAD923B0119300573C84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1FBADB23B0119300573C84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF1FBADD23B0119300573C84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF1FBADD23B0119300573C84 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		FF1FBAE023B0119300573C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1FBAE223B0119800573C84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF1FBAE523B0119800573C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1FBAE723B0119800573C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1FBAED23B04E2900573C84 /* ExpenseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseHistoryViewController.swift; sourceTree = "<group>"; };
+		FF1FBAF223B0736600573C84 /* ExpenseHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseHistoryCell.swift; sourceTree = "<group>"; };
+		FFC2A45B23B7F4D600230093 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		FFC2A45D23B7F65800230093 /* Expenses+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expenses+Extension.swift"; sourceTree = "<group>"; };
+		FFC2A45F23B8192000230093 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +68,16 @@
 			children = (
 				FF1FBAD923B0119300573C84 /* AppDelegate.swift */,
 				FF1FBADB23B0119300573C84 /* SceneDelegate.swift */,
-				FF1FBADD23B0119300573C84 /* ViewController.swift */,
+				FF1FBADD23B0119300573C84 /* AddExpenseViewController.swift */,
 				FF1FBADF23B0119300573C84 /* Main.storyboard */,
 				FF1FBAE223B0119800573C84 /* Assets.xcassets */,
 				FF1FBAE423B0119800573C84 /* LaunchScreen.storyboard */,
 				FF1FBAE723B0119800573C84 /* Info.plist */,
+				FF1FBAED23B04E2900573C84 /* ExpenseHistoryViewController.swift */,
+				FF1FBAF223B0736600573C84 /* ExpenseHistoryCell.swift */,
+				FFC2A45B23B7F4D600230093 /* Expense.swift */,
+				FFC2A45D23B7F65800230093 /* Expenses+Extension.swift */,
+				FFC2A45F23B8192000230093 /* Expenses.swift */,
 			);
 			path = Expensr;
 			sourceTree = "<group>";
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1FBADE23B0119300573C84 /* ViewController.swift in Sources */,
+				FFC2A45C23B7F4D600230093 /* Expense.swift in Sources */,
+				FF1FBADE23B0119300573C84 /* AddExpenseViewController.swift in Sources */,
 				FF1FBADA23B0119300573C84 /* AppDelegate.swift in Sources */,
+				FF1FBAEE23B04E2900573C84 /* ExpenseHistoryViewController.swift in Sources */,
+				FFC2A46023B8192000230093 /* Expenses.swift in Sources */,
 				FF1FBADC23B0119300573C84 /* SceneDelegate.swift in Sources */,
+				FFC2A45E23B7F65800230093 /* Expenses+Extension.swift in Sources */,
+				FF1FBAF323B0736600573C84 /* ExpenseHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
