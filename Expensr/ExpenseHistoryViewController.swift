@@ -52,6 +52,13 @@ class ExpenseHistoryViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        Expenses.shared.delete(self.expenses[row], from: row) {
+            NotificationCenter.default.post(name: AddExpenseViewController.updatedExpensesNotification, object: nil)
+        }
+    }
+
     func setupTableView() {
         self.tableView.rowHeight = 80
     }

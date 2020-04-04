@@ -65,12 +65,19 @@ class Expenses {
     }
 
     func add(_ expense: Expense, completion: () -> Void) {
-        self.write(expense)
+        self.expensesArray.append(expense)
+        self.updateUserDefaults()
         self.update(expense, completion: completion)
     }
 
-    func write(_ expense: Expense) {
-        self.expensesArray.append(expense)
+    func delete(_ expense: Expense, from row: Int, completion: (() -> Void)?) {
+        self.expensesArray.remove(at: row)
+        self.updateUserDefaults()
+
+        self.update(expense, wasDeleted: true, completion: completion ?? { })
+    }
+
+    func updateUserDefaults() {
         do {
             let encodedData = try JSONEncoder().encode(self.expensesArray)
             self.defaults.set(encodedData, forKey: Self.expensesArrayKey)
@@ -79,24 +86,29 @@ class Expenses {
         }
     }
 
-    func update(_ expense: Expense, completion: () -> Void) {
+    func update(_ expense: Expense, wasDeleted: Bool = false, completion: () -> Void) {
+        var expenseAmount = expense.expense
+
+        if wasDeleted {
+            expenseAmount = -expenseAmount
+        }
+
         switch expense.category {
             case "Food":
-                self.foodExpenses += expense.expense
+                self.foodExpenses += expenseAmount
             case "Groceries":
-                self.groceriesExpenses += expense.expense
+                self.groceriesExpenses += expenseAmount
             case "Misc":
-                self.miscExpenses += expense.expense
+                self.miscExpenses += expenseAmount
             case "Gas":
-                self.gasExpenses += expense.expense
+                self.gasExpenses += expenseAmount
             case "OTB":
-                self.otbExpenses += expense.expense
+                self.otbExpenses += expenseAmount
         default:
             break
         }
 
         self.updateTotals()
-
         completion()
     }
 

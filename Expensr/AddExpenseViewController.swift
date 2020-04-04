@@ -51,6 +51,11 @@ class AddExpenseViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.loadExpensesView()
         self.setupPickerViewDelegate()
         self.turnOffSwitch()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.updateAllLabels(_:)),
+                                               name: Self.updatedExpensesNotification,
+                                               object: nil)
     }
 
 
@@ -78,6 +83,13 @@ class AddExpenseViewController: UIViewController, UIPickerViewDataSource, UIPick
 
         NotificationCenter.default.post(name: Self.updatedExpensesNotification, object: nil)
     }
+
+    @objc
+    func updateAllLabels(_ notification: Notification) {
+        self.updateAllExpenseLabels()
+        self.updateTotalLabels()
+    }
+
 
     @IBAction func reset(_ sender: UIButton) {
         let alert = UIAlertController(title: "Are you sure?",
@@ -178,6 +190,14 @@ class AddExpenseViewController: UIViewController, UIPickerViewDataSource, UIPick
         default:
             break
         }
+    }
+
+    func updateAllExpenseLabels() {
+        self.foodLabel.text = self.formatLabel(for: Expenses.shared.foodExpenses)
+        self.groceriesLabel.text = self.formatLabel(for: Expenses.shared.groceriesExpenses)
+        self.miscLabel.text = self.formatLabel(for: Expenses.shared.miscExpenses)
+        self.gasLabel.text = self.formatLabel(for: Expenses.shared.gasExpenses)
+        self.otbLabel.text = self.formatLabel(for: Expenses.shared.otbExpenses)
     }
 
     func updateTotalLabels() {
